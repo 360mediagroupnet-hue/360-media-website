@@ -113,7 +113,7 @@ f.addEventListener('submit',async function(e){e.preventDefault();
  try{var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
    body:JSON.stringify(Object.assign({},d,{access_key:'c6e346b3-f6ee-4516-806b-92da78cbb922',subject:s,from_name:'360 Media Group website',replyto:d.email,botcheck:''}))});
   var j=await r.json().catch(function(){return{}});if(!r.ok||j.success===false)throw 0;
-  if(window.gtag)gtag('event','generate_lead',{form:'service_page',page:location.pathname});
+  if(window.gtag){gtag('event','generate_lead',{form:'service_page',page:location.pathname});gtag('event','conversion',{send_to:'AW-18261423689/xMW4CIu8sK0dEMns3INE'});}if(window.fbq)fbq('track','Lead');
   f.outerHTML='<div class="enq-msg">Thanks '+d.name.replace(/[<>&]/g,'')+'! Got it. Jack will text or email you back, usually within a couple of hours (7am–9pm). Want to check prices in the meantime? See the <a href="/sunshine-coast-event-price-guide">price guide</a>.</div>';
  }catch(x){b.disabled=false;b.textContent='Check my date';
   var m=document.createElement('div');m.className='enq-msg err';m.innerHTML='Sorry, that didn\'t send. Please call <a href="tel:+61461406627">0461 406 627</a> or email <a href="mailto:hire360photobooth@gmail.com">hire360photobooth@gmail.com</a>.';f.appendChild(m);}
